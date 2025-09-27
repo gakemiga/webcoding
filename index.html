@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luz no Jogo — Você não está sozinho</title>
+  <meta name="description" content="Apoio a quem sofre com vício em slots: chat anônimo, comunidade e profissionais." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand" role="banner">
+        <span class="logo" aria-hidden="true">✨</span>
+        <div class="brand-text">
+          <strong class="brand-name">Luz no Jogo</strong>
+          <span class="brand-slogan">Você não está sozinho</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav-link is-active" data-target="home" aria-current="page">Home</button>
+        <button class="nav-link" data-target="ajuda">Ajuda Imediata</button>
+        <button class="nav-link" data-target="comunidade">Comunidade</button>
+        <button class="nav-link" data-target="profissionais">Profissionais</button>
+      </nav>
+
+      <div class="actions">
+        <button class="btn btn-accent to-ajuda">Falar agora</button>
+        <button class="btn btn-ghost exit-btn" title="Sair rapidamente">Sair rápido</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="main">
+    <!-- HOME -->
+    <section id="home" class="view is-visible" aria-labelledby="home-title">
+      <div class="container grid-2">
+        <div class="hero-copy">
+          <h1 id="home-title">Ajuda para quem sofre com vício em slot</h1>
+          <p class="lead">Conversa anônima, acolhimento e recursos práticos. Aqui você encontra um caminho seguro para recomeçar.</p>
+          <div class="cta-row">
+            <button class="btn btn-accent to-ajuda">Fale agora com o assistente</button>
+            <button class="btn btn-primary to-comunidade">Entrar no grupo de apoio</button>
+          </div>
+          <ul class="bullets">
+            <li>100% anônimo e sem julgamentos</li>
+            <li>Conteúdos e dicas para lidar com a vontade de jogar</li>
+            <li>Indicação de profissionais confiáveis</li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <div class="illus" aria-hidden="true">
+            <div class="slot-icon">🎰</div>
+            <div class="glow"></div>
+          </div>
+          <div class="howitworks">
+            <h2>Como funciona</h2>
+            <ol>
+              <li><strong>Converse</strong> com o assistente de apoio</li>
+              <li><strong>Encontre</strong> a comunidade e materiais</li>
+              <li><strong>Acompanhe</strong> seu progresso com ajuda profissional</li>
+            </ol>
+          </div>
+          <div class="trust-badges">
+            <span class="tag">Anônimo</span>
+            <span class="tag">Seguro</span>
+            <span class="tag">Gratuito</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container testimonials">
+        <h3>Histórias de quem deu o primeiro passo</h3>
+        <div class="cards">
+          <article class="card"><p>“Eu achava que não tinha saída. Aqui encontrei escuta e dei meu primeiro passo.”</p><span class="meta">— Anônimo</span></article>
+          <article class="card"><p>“Entrei no grupo e me senti menos sozinho. As dicas me ajudaram muito.”</p><span class="meta">— Anônimo</span></article>
+          <article class="card"><p>“Consegui marcar consulta com uma psicóloga acolhedora indicada pelo site.”</p><span class="meta">— Anônimo</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AJUDA IMEDIATA -->
+    <section id="ajuda" class="view" aria-labelledby="ajuda-title">
+      <div class="container grid-ajuda">
+        <div class="chat-area">
+          <h1 id="ajuda-title" class="sr-only">Ajuda Imediata</h1>
+          <div class="chat-window" role="log" aria-live="polite">
+            <div class="msg bot">
+              <div class="avatar" aria-hidden="true">🫶</div>
+              <div class="bubble">Olá! 👋 Sou seu assistente de apoio. Quer conversar sobre seus hábitos de jogo? Estou aqui para ouvir, sem julgamentos.</div>
+            </div>
+          </div>
+
+          <form class="chat-input" id="chat-form">
+            <input id="msg" type="text" placeholder="Escreva sua mensagem" aria-label="Escreva sua mensagem" />
+            <button class="btn btn-accent" type="submit">Enviar</button>
+          </form>
+
+          <div class="quick-actions">
+            <button class="chip qa" data-text="Quero parar de jogar">Quero parar de jogar</button>
+            <button class="chip qa" data-text="Quero entender meu vício">Quero entender meu vício</button>
+            <button class="chip qa to-profissionais" data-text="Quero falar com um profissional">Quero falar com um profissional</button>
+          </div>
+
+          <div class="safety">
+            <p>⚠️ Informações educativas. Não substituem avaliação clínica. Em crise, ligue <strong>188 (CVV)</strong>.</p>
+            <button class="btn btn-ghost exit-btn sm">Sair rapidamente</button>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="side-card">
+            <h3>Ajuda rápida</h3>
+            <ul>
+              <li>📞 Emergência emocional: 188 (CVV)</li>
+              <li>🧠 Dicas: respiração 4-7-8, adiar 10 min, caminhar</li>
+              <li>📚 Conteúdos: limites, gatilhos, finanças</li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>Grupo de apoio</h3>
+            <p>Converse com outras pessoas que estão passando pelo mesmo.</p>
+            <button class="btn btn-primary to-comunidade">Entrar no grupo</button>
+          </div>
+          <div class="side-card">
+            <h3>Histórias de superação</h3>
+            <ul class="mini-list">
+              <li>“2 semanas sem jogar.”</li>
+              <li>“Aprendi a dizer não para o gatilho.”</li>
+              <li>“Consegui conversar com minha família.”</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- COMUNIDADE -->
+    <section id="comunidade" class="view" aria-labelledby="comunidade-title">
+      <div class="container grid-2-rev">
+        <div>
+          <h1 id="comunidade-title">Compartilhe, aprenda e recomece</h1>
+          <p class="lead">Um espaço seguro para dividir experiências e encontrar apoio.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary">Ver relatos</button>
+            <button class="btn btn-accent">Compartilhar minha experiência</button>
+          </div>
+
+          <div class="tips">
+            <h3>Dicas rápidas</h3>
+            <ul>
+              <li>Planeje o dia para evitar ociosidade (horários críticos).</li>
+              <li>Troque a rotina do gatilho por uma atividade curta (5–10 min).</li>
+              <li>Avise alguém de confiança quando sentir vontade de jogar.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="cards">
+            <article class="card"><p>“Jogar estava destruindo minha vida. Encontrei apoio e dei o primeiro passo.”</p><span class="meta">— Anônimo</span></article>
+            <article class="card"><p>“No grupo, percebi que não era só eu. Isso me deu força para continuar.”</p><span class="meta">— Anônimo</span></article>
+            <article class="card"><p>“Com ajuda, recuperei meu foco e reorganizei minhas finanças.”</p><span class="meta">— Anônimo</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFISSIONAIS -->
+    <section id="profissionais" class="view" aria-labelledby="profissionais-title">
+      <div class="container">
+        <h1 id="profissionais-title">Encontre apoio profissional</h1>
+        <p class="lead">Converse com psicólogos e especialistas prontos para ajudar no seu processo de recuperação.</p>
+
+        <div class="filters">
+          <label><span class="lbl">Cidade</span>
+            <select disabled>
+              <option>Manaus</option><option>Online</option><option>Outras</option>
+            </select>
+          </label>
+          <label><span class="lbl">Atendimento</span>
+            <select disabled>
+              <option>Online</option><option>Presencial</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="pro-grid">
+          <article class="pro-card">
+            <div class="pro-avatar" aria-hidden="true">👩‍⚕️</div>
+            <div class="pro-info">
+              <h3>Dra. Ana Silva</h3>
+              <p>Psicóloga clínica • Atendimento online</p>
+            </div>
+            <button class="btn btn-accent">Agendar atendimento</button>
+          </article>
+
+          <article class="pro-card">
+            <div class="pro-avatar" aria-hidden="true">👨‍⚕️</div>
+            <div class="pro-info">
+              <h3>Dr. João Almeida</h3>
+              <p>Terapeuta em dependência • Manaus</p>
+            </div>
+            <button class="btn btn-accent">Agendar atendimento</button>
+          </article>
+
+          <article class="pro-card">
+            <div class="pro-avatar" aria-hidden="true">👩‍⚕️</div>
+            <div class="pro-info">
+              <h3>Dra. Camila Santos</h3>
+              <p>Psicóloga • Presencial e online</p>
+            </div>
+            <button class="btn btn-accent">Agendar atendimento</button>
+          </article>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Importante:</strong> Todos os atendimentos são confidenciais. Se você não puder pagar, buscamos parcerias com atendimentos sociais.</p>
+          <button class="btn btn-primary to-ajuda">Falar agora com assistente</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand-min">
+        <span class="logo" aria-hidden="true">✨</span>
+        <strong>Luz no Jogo</strong>
+      </div>
+      <nav aria-label="Links do rodapé" class="foot-nav">
+        <a class="foot-link" href="#" onclick="switchView('home')">Home</a>
+        <a class="foot-link" href="#" onclick="switchView('ajuda')">Ajuda</a>
+        <a class="foot-link" href="#" onclick="switchView('comunidade')">Comunidade</a>
+        <a class="foot-link" href="#" onclick="switchView('profissionais')">Profissionais</a>
+      </nav>
+      <small class="muted">© Luz no Jogo – Mockup educacional.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
