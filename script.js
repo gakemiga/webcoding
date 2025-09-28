@@ -85,3 +85,92 @@ form?.addEventListener('submit', async (e) => {
     botBubble.textContent = 'Erro de rede: ' + (err?.message || err);
   }
 });
+// ==== Seletores da sua página ====
+const form = document.getElementById("chat-form");
+const input = document.getElementById("msg");
+const chat = document.querySelector(".chat-window");
+
+// Adiciona uma mensagem na janela
+function addMsg(text, who = "user") {
+  const wrap = document.createElement("div");
+  wrap.className = `msg ${who === "user" ? "user" : "bot"}`;
+
+  const avatar = document.createElement("div");
+  avatar.className = "avatar";
+  avatar.setAttribute("aria-hidden", "true");
+  avatar.textContent = who === "user" ? "🙂" : "🫶";
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble";
+  bubble.textContent = text;
+
+  wrap.appendChild(avatar);
+  wrap.appendChild(bubble);
+  chat.appendChild(wrap);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+// Envio do formulário
+form?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const text = (input?.value || "").trim();
+  if (!text) return;
+
+  addMsg(text, "user");
+  input.value = "";
+
+  // placeholder de "digitando..."
+  const thinking = document.createElement("div");
+  thinking.className = "msg bot";
+  thinking.innerHTML = `<div class="avatar" aria-hidden="true">🫶</div><div class="bubble">Digitando…</div>`;
+  chat.appendChild(thinking);
+  chat.scrollTop = chat.scrollHeight;
+
+  try {
+    const resp = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        messages: [
+          {
+            role: "system",
+            content:
+              "Você é um assistente acolhedor para quem sofre com vício em slots. Seja empático, objetivo e lembre: em crise ligar 188 (CVV)."
+          },
+          { role: "user", content: text }
+        ]
+      })
+    });
+
+    const data = await resp.json();
+    thinking.remove();
+
+    if (!resp.ok) {
+      addMsg(data.error || "Erro ao responder. Tente novamente.", "bot");
+      return;
+    }
+    addMsg(data.reply || "…", "bot");
+  } catch (err) {
+    thinking.remove();
+    addMsg("Erro de rede: Failed to fetch", "bot");
+  }
+});
+
+// Botões de atalho (chips)
+document.querySelectorAll(".chip.qa").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    input.value = btn.dataset.text || btn.textContent;
+    input.focus();
+  });
+});
+
+// Navegação já existente no seu HTML (se a função existir)
+document.querySelectorAll(".to-ajuda").forEach((b) =>
+  b.addEventListener("click", () => window.switchView?.("ajuda"))
+);
+document.querySelectorAll(".to-comunidade").forEach((b) =>
+  b.addEventListener("click", () => window.switchView?.("comunidade"))
+);
+document.querySelectorAll(".to-profissionais").forEach((b) =>
+  b.addEventListener("click", () => window.switchView?.("profissionais"))
+);
