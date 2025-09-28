@@ -1,5 +1,8 @@
+// /api/chat.js — backend usando Groq (gratuito com limites)
 export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
 
   try {
     const { messages } = req.body || {};
@@ -14,14 +17,16 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama-3.1-8b-instant",
+        model: "llama-3.1-8b-instant", // rápido e gratuito p/ testes
         messages,
         temperature: 0.7
       })
     });
 
     const data = await r.json();
-    if (!r.ok) return res.status(r.status).json({ error: data.error?.message || "Erro na Groq" });
+    if (!r.ok) {
+      return res.status(r.status).json({ error: data.error?.message || "Erro na Groq" });
+    }
 
     const content = data.choices?.[0]?.message?.content || "";
     return res.status(200).json({ reply: content });
